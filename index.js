@@ -3,244 +3,76 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.DEFAULT_EXTENSIONS = void 0;
-Object.defineProperty(exports, "File", {
+Object.defineProperty(exports, "ROOT_CONFIG_FILENAMES", {
   enumerable: true,
   get: function () {
-    return _file.default;
+    return _configuration.ROOT_CONFIG_FILENAMES;
   }
 });
-Object.defineProperty(exports, "buildExternalHelpers", {
+Object.defineProperty(exports, "findConfigUpwards", {
   enumerable: true,
   get: function () {
-    return _buildExternalHelpers.default;
+    return _configuration.findConfigUpwards;
   }
 });
-Object.defineProperty(exports, "createConfigItem", {
+Object.defineProperty(exports, "findPackageData", {
   enumerable: true,
   get: function () {
-    return _config.createConfigItem;
+    return _package.findPackageData;
   }
 });
-Object.defineProperty(exports, "createConfigItemAsync", {
+Object.defineProperty(exports, "findRelativeConfig", {
   enumerable: true,
   get: function () {
-    return _config.createConfigItemAsync;
+    return _configuration.findRelativeConfig;
   }
 });
-Object.defineProperty(exports, "createConfigItemSync", {
+Object.defineProperty(exports, "findRootConfig", {
   enumerable: true,
   get: function () {
-    return _config.createConfigItemSync;
+    return _configuration.findRootConfig;
   }
 });
-Object.defineProperty(exports, "getEnv", {
+Object.defineProperty(exports, "loadConfig", {
   enumerable: true,
   get: function () {
-    return _environment.getEnv;
+    return _configuration.loadConfig;
   }
 });
-Object.defineProperty(exports, "loadOptions", {
+Object.defineProperty(exports, "loadPlugin", {
   enumerable: true,
   get: function () {
-    return _config.loadOptions;
+    return _plugins.loadPlugin;
   }
 });
-Object.defineProperty(exports, "loadOptionsAsync", {
+Object.defineProperty(exports, "loadPreset", {
   enumerable: true,
   get: function () {
-    return _config.loadOptionsAsync;
-  }
-});
-Object.defineProperty(exports, "loadOptionsSync", {
-  enumerable: true,
-  get: function () {
-    return _config.loadOptionsSync;
-  }
-});
-Object.defineProperty(exports, "loadPartialConfig", {
-  enumerable: true,
-  get: function () {
-    return _config.loadPartialConfig;
-  }
-});
-Object.defineProperty(exports, "loadPartialConfigAsync", {
-  enumerable: true,
-  get: function () {
-    return _config.loadPartialConfigAsync;
-  }
-});
-Object.defineProperty(exports, "loadPartialConfigSync", {
-  enumerable: true,
-  get: function () {
-    return _config.loadPartialConfigSync;
-  }
-});
-Object.defineProperty(exports, "parse", {
-  enumerable: true,
-  get: function () {
-    return _parse.parse;
-  }
-});
-Object.defineProperty(exports, "parseAsync", {
-  enumerable: true,
-  get: function () {
-    return _parse.parseAsync;
-  }
-});
-Object.defineProperty(exports, "parseSync", {
-  enumerable: true,
-  get: function () {
-    return _parse.parseSync;
+    return _plugins.loadPreset;
   }
 });
 Object.defineProperty(exports, "resolvePlugin", {
   enumerable: true,
   get: function () {
-    return _files.resolvePlugin;
+    return _plugins.resolvePlugin;
   }
 });
 Object.defineProperty(exports, "resolvePreset", {
   enumerable: true,
   get: function () {
-    return _files.resolvePreset;
+    return _plugins.resolvePreset;
   }
 });
-Object.defineProperty((0, exports), "template", {
+Object.defineProperty(exports, "resolveShowConfigPath", {
   enumerable: true,
   get: function () {
-    return _template().default;
+    return _configuration.resolveShowConfigPath;
   }
 });
-Object.defineProperty((0, exports), "tokTypes", {
-  enumerable: true,
-  get: function () {
-    return _parser().tokTypes;
-  }
-});
-Object.defineProperty(exports, "transform", {
-  enumerable: true,
-  get: function () {
-    return _transform.transform;
-  }
-});
-Object.defineProperty(exports, "transformAsync", {
-  enumerable: true,
-  get: function () {
-    return _transform.transformAsync;
-  }
-});
-Object.defineProperty(exports, "transformFile", {
-  enumerable: true,
-  get: function () {
-    return _transformFile.transformFile;
-  }
-});
-Object.defineProperty(exports, "transformFileAsync", {
-  enumerable: true,
-  get: function () {
-    return _transformFile.transformFileAsync;
-  }
-});
-Object.defineProperty(exports, "transformFileSync", {
-  enumerable: true,
-  get: function () {
-    return _transformFile.transformFileSync;
-  }
-});
-Object.defineProperty(exports, "transformFromAst", {
-  enumerable: true,
-  get: function () {
-    return _transformAst.transformFromAst;
-  }
-});
-Object.defineProperty(exports, "transformFromAstAsync", {
-  enumerable: true,
-  get: function () {
-    return _transformAst.transformFromAstAsync;
-  }
-});
-Object.defineProperty(exports, "transformFromAstSync", {
-  enumerable: true,
-  get: function () {
-    return _transformAst.transformFromAstSync;
-  }
-});
-Object.defineProperty(exports, "transformSync", {
-  enumerable: true,
-  get: function () {
-    return _transform.transformSync;
-  }
-});
-Object.defineProperty((0, exports), "traverse", {
-  enumerable: true,
-  get: function () {
-    return _traverse().default;
-  }
-});
-exports.version = exports.types = void 0;
-var _file = require("./transformation/file/file");
-var _buildExternalHelpers = require("./tools/build-external-helpers");
-var _files = require("./config/files");
-var _environment = require("./config/helpers/environment");
-function _types() {
-  const data = require("@babel/types");
-  _types = function () {
-    return data;
-  };
-  return data;
-}
-Object.defineProperty((0, exports), "types", {
-  enumerable: true,
-  get: function () {
-    return _types();
-  }
-});
-function _parser() {
-  const data = require("@babel/parser");
-  _parser = function () {
-    return data;
-  };
-  return data;
-}
-function _traverse() {
-  const data = require("@babel/traverse");
-  _traverse = function () {
-    return data;
-  };
-  return data;
-}
-function _template() {
-  const data = require("@babel/template");
-  _template = function () {
-    return data;
-  };
-  return data;
-}
-var _config = require("./config");
-var _transform = require("./transform");
-var _transformFile = require("./transform-file");
-var _transformAst = require("./transform-ast");
-var _parse = require("./parse");
-var thisFile = require("./index");
-;
-const version = "7.22.10";
-exports.version = version;
-const DEFAULT_EXTENSIONS = Object.freeze([".js", ".jsx", ".es6", ".es", ".mjs", ".cjs"]);
-exports.DEFAULT_EXTENSIONS = DEFAULT_EXTENSIONS;
-;
-{
-  {
-    exports.OptionManager = class OptionManager {
-      init(opts) {
-        return (0, _config.loadOptionsSync)(opts);
-      }
-    };
-    exports.Plugin = function Plugin(alias) {
-      throw new Error(`The (${alias}) Babel 5 plugin is being run with an unsupported Babel version.`);
-    };
-  }
-}
-0 && (exports.types = exports.traverse = exports.tokTypes = exports.template = 0);
+var _package = require("./package");
+var _configuration = require("./configuration");
+var _plugins = require("./plugins");
+({});
+0 && 0;
 
 //# sourceMappingURL=index.js.map
